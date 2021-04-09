@@ -10,20 +10,18 @@
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
-  year: 1994
-}
+  color: "red",
+  make: "toyota",
+  model: "tacoma",
+  year: 1994,
+};
 // Do not edit the code above.
 
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
-
-
+let { color, make, model, year } = carDetails;
 
 ////////// PROBLEM 2 //////////
 
@@ -33,15 +31,13 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
-  
+function greeting(obj) {
+  let { firstName, lastName, title } = obj;
+
   // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+  return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -53,9 +49,10 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
-
+function totalPopulation(obj) {
+  let { utah, california, texas, arizona } = obj;
+  return utah + california + texas + arizona;
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -67,9 +64,14 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
-
-
+function ingredients(obj) {
+  let { carb, fat, protein } = obj;
+  let result = [];
+  result.push(carb);
+  result.push(fat);
+  result.push(protein);
+  return result;
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -85,9 +87,9 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
-
-
+function largeNumbers({ first, second, third }) {
+  return Math.min(first, second, third);
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -97,6 +99,15 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
+function numberGroups({ a, b, c }) {
+  let longest = "";
+  if (a.length > b.length && a.length > c.length) {
+    longest = a;
+  } else if (b.length > c.length) {
+    longest = b;
+  } else {
+    longest = c;
+  }
 
-
+  return longest;
+}
